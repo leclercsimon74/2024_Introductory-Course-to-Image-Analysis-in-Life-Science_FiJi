@@ -1,4 +1,5 @@
 # Introductory Course to Image Analysis in Life Science using FiJi
+
 **Important ressources:**
 - ImageJ website for plugins: https://imagej.net/ij/
 - Advice for macro writing: https://imagej.net/ij/developer/macro/macros.html
@@ -185,8 +186,12 @@ run("Analyze Particles...", "size=0-Infinity display clear");
 > [!TIP]
 > A lot of process will make the calculation in place! The one that does not tends to give you the option to keep the original image(s).
 
-### Segmentation: Selection and Mask
+### Segmentation: Mask and ROI
+ImageJ have a nice ROI (Region Of Interest) manager. It is possible to call it `Analyze` -> `Tools` -> `ROI Manager...`. It will open the following window.
 
+![ROI_manager.png](Images/Readme_images/ROI_manager.png)
+
+ 
 
 
 
