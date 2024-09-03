@@ -240,6 +240,12 @@ for (i = 0; i < 10; i++) {
 }
 ```
 
+> [!NOTE]
+> Try to modify the above example so it prints the increment of `i`! You can also try modify the initial stage, the end condition and the increment step.
+
+> [!WARNING]
+> Be carefull of infinite loop, loop which the condition will always be `false`, and as such, the program will **never** exit the loop!
+
 However, with the auto-completion active, just typing `for` should prompt the following, with the first one being the classical `for` loop, the second a loop that go through the Result table and the last one that go through a list of file. These are the most commun one, and you can use them as a template to loop through anything.
 
 ![for_loop_autocompletion.png](Images/Readme_images/for_loop_autocompletion.png)
@@ -282,7 +288,13 @@ if (to_print || a > b){
 > [!NOTE]
 > Try to correct the above example so it prints the correct statement!
 
-
+> [!NOTE]
+> It is possible to combine a `loop` and a `if` statement to `break` the loop!
+> ```Java
+> for (i = 0; i < 10; i++) {
+>	print(i);
+>	if (i==5) break
+>}```
 
 
 
