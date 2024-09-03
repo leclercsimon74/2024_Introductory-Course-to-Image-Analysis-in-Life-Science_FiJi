@@ -292,7 +292,7 @@ if (to_print || a > b){
 > It is possible to combine a `loop` and a `if` statement to `break` the loop!
 > ```Java
 > for (i = 0; i < 10; i++) {
->	print(i);
+> 	// do or print something here!
 >	if (i==5) break
 >}```
 
