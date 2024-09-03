@@ -263,7 +263,7 @@ A boolean is returned in some case by some ImageJ function (for example: `is("gr
 - `!=` to check inequality
 - `>`, `<`, `>=`, `<=` for comparison (bigger, smaller than)
 
-It is possible to define a piece of code to activate if the condition does not apply with the `else` keyword. In a same manner, it is possible to chain condition checking with the `else if` keyword. Keep in mind that in this case, the program will check each `if` condition in order, and will only excecute the code of the first `true` statement. Finally, it is possible to check multiple condition at the same time with using boolean check, with `&&` for `and` (condition1 AND condition2, where both condition needs to be `true`) and `||` for `or` (condition1 or condition2, where only one of the condition needs to be `true`).
+We can define a piece of code to activate if the condition does not apply (`false`) with the `else` keyword. In a same manner, we can chain condition checking with the `else if` keyword. Keep in mind that in this case, the program will check each `if` condition in order, and will only excecute the code of the first `true` statement. Finally, it is possible to check multiple condition at the same time with using boolean check, with `&&` for `and` (condition1 **AND** condition2, where both condition needs to be `true`) and `||` for `or` (condition1 **OR** condition2, where only one of the condition needs to be `true`).
 
 ```Java
 a = 5;
