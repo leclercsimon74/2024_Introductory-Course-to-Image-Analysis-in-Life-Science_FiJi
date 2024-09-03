@@ -100,16 +100,16 @@ print(endsWith(b, "ld")); // check the send of the string
 Lucky for us, ImageJ have now a nice auto-completion system, that can be enable with `Ctrl+Space`, and which contain most commun expression.
 
 ### The Recorder
-One of the strong point of ImageJ is how easy it is to use and protoype an image analysis pipeline. Once we have an idea of what to do with a given image, the easiest is to turn on the `Recorder` (`Plugins` > `Macros` > `Recorder`). The recorder will record _most_ of the action realized in ImageJ, from image opening to selecting a window or running some process.
+One of the strong point of ImageJ is how easy it is to use and protoype an image analysis pipeline. Once we have an idea of what to do with a given image, the easiest is to turn on the `Recorder` (`Plugins` -> `Macros` -> `Recorder`). The recorder will record _most_ of the action realized in ImageJ, from image opening to selecting a window or running some process.
 
 Let's make our first full Macro!
 
-1. Open the `Recorder` (`Plugins` > `Macros` > `Recorder`)
-2. Open the Blobs image (`File` > `Open Sample` > `Blobs`)
-3. Run a Gaussian Blur with sigma of 3 (`Process` > `Gaussian Blur...`)
-4. Set a Otsu threshold (`Image` > `Adjust` > `Threshold...`)
-5. Set the parameters to measure as area, centroid and shape (`Analyze` > `Set Measurements...`)
-6. Analyze the segmented image (`Analyze` > `Analyze Particle...`)
+1. Open the `Recorder` (`Plugins` -> `Macros` -> `Recorder`)
+2. Open the Blobs image (`File` -> `Open Sample` -> `Blobs`)
+3. Run a Gaussian Blur with sigma of 3 (`Process` -> `Gaussian Blur...`)
+4. Set a Otsu threshold (`Image` -> `Adjust` -> `Threshold...`)
+5. Set the parameters to measure as area, centroid and shape (`Analyze` -> `Set Measurements...`)
+6. Analyze the segmented image (`Analyze` -> `Analyze Particle...`)
 7. Then on the `Recorder`, click on `Create` to automatically generate the macro
 
 Congratulation on your first Macro!
@@ -159,7 +159,7 @@ In this case, string manipulation, and mainly concatenation, is very important t
 ### Window manipulation
 Most image manipulation, such as `run("Gaussian Blur...", "sigma=4");` will do the calculation in place, meaning that the original image will be replaced by the new image, resulting in the loss of the original image (except if saved on the disk).
 
-In some case, such scenario is not recommended, and a duplicate of the image can be made in `Image` > `Duplicate...`. This open a window prompting for a name and some extra option based on the image dimension.
+In some case, such scenario is not recommended, and a duplicate of the image can be made in `Image` -> `Duplicate...`. This open a window prompting for a name and some extra option based on the image dimension.
 
 But then you stumble accross an interesting trouble with ImageJ: most image manipulation are done on the image selected.
 > [!WARNING]
@@ -243,14 +243,14 @@ for (i = 0; i < 10; i++) {
 > [!NOTE]
 > Try to modify the above example so it prints the increment of `i`! You can also try modify the initial stage, the end condition and the increment step.
 
-> [!WARNING]
+> [!CAUTION]
 > Be carefull of infinite loop, loop which the condition will always be `false`, and as such, the program will **never** exit the loop!
 
-However, with the auto-completion active, just typing `for` should prompt the following, with the first one being the classical `for` loop, the second a loop that go through the Result table and the last one that go through a list of file. These are the most commun one, and you can use them as a template to loop through anything.
+ImageJ macro simplify our life with the auto-completion active, just typing `for` should prompt the following hints, with the first one being the classical `for` loop, the second a loop that go through the Result table and the last one that go through a list of file. These are the most commun loop, and you can use them as a template to loop through anything.
 
 ![for_loop_autocompletion.png](Images/Readme_images/for_loop_autocompletion.png)
 
-Other kind of loop are also, such as the `while(condition){}`, where the condition is first evaluated and if `true`, it enters the loop until the condition is `false`, and the `do {...} while(condition);` that will excecute the loop first, then check the condition to determine to continue or not the loop.
+There is also other kind of loop, such as the `while(condition){}`, where the condition is first evaluated and if `true`, it enters the loop until the condition is `false`, and the `do {...} while(condition);` that will excecute the loop first, then check the condition to determine to continue or not the loop.
 
 ### The `if` condition
 Check if the condition is `true`, and `if` it is the case, realize the action. For example, if I am tired, I stop to stir the pot.
@@ -288,7 +288,7 @@ if (to_print || a > b){
 > [!NOTE]
 > Try to correct the above example so it prints the correct statement!
 
-> [!NOTE]
+> [!TIP]
 > It is possible to combine a `loop` and a `if` statement to `break` the loop!
 > ```Java
 > for (i = 0; i < 10; i++) {
@@ -296,11 +296,74 @@ if (to_print || a > b){
 >	if (i==5) break
 >}```
 
+### Functions
+You define what a function is. Most of the time, if a piece of code is repeated, this can be a candidate for a function. A function is defined as `function(arguments){code}`, and can return a value with the `return` keyword, see the example below.
 
+```Java
+function sum(i, j) {
+  return i + j;
+}
 
+a = 5;
+b = 3.0;
 
+print(sum(a,b))
+```
 
+> [!NOTE]
+> Comment and describe excactly what a function is doing, or you may get lost very quickly!
 
+## Extra
+
+### Image Brightness/Contrast
+By selecting `Image` -> `Adjust` -> `Brightness/Contrast...`, it will display the current image histogram and the possiblity to adjust the brightness and contrast of the image. Note that this does NOT change the data of the image, it is solely to make the image content easier to see, specially with a click on the `Auto` button. However, if you change the depth of the image (`Image` -> `Type`, the number of bit  by pixel), you will modify the data based on the current minimum and maximum!
+
+![Adjust_BC.png](Images/Readme_images/Adjust_BC.png)
+
+### Colors
+Images can have multiple channels, represeneted by color. The `Image` -> `Color` allow you to manipulate this, by either splitting, merging or arrange channels. One easy way though is to pick the `Channels Tool...`, enable the `Composite`, then selecting the channel to show or not. It is then possible to transform the image as RGB, ready to export.
+
+![channel_tool.png](Images/Readme_images/channel_tool.png)
+
+### Stack
+In a similar way, some images will have a Zstack, which can be manipulated with the `Image` -> `Stack`. From adding slices to remove only some, as well as realizing a Z projection or Z profile, a lot of tools are available to enable you a full control on Zstack.
+
+![Stack_ex.png](Images/Readme_images/Stack_ex.png)
+
+### Process
+ImageJ has a lot of simple processing step that may be usefull, albeit a little obscure on how they are doing things.
+
+A couple of them are usefull in case of uneven illumination, `Enhance Local Contrast (CLAHE)` and `Substract Background`. In the below example, you can see the original image on the left (red 🔴 rectangle) with its associated histogram, the CLAHE (default settings) correction (cyan 🔵 rectangle) and the background substraction (purple 🟣 rectangle). All images brightness and contrast are adjusted on the CLAHE correction. You can see that the CLAHE heavily adjust the histogram, pushing some values to higher value, which result in some spike in the histogram. On the opposite side, the background substraction push the histogram on the left, eliminating small values. The choice of the method used to diminush the background is up to you.
+
+![Background_correction.png](Images/Readme_images/Background_correction.png)
+
+One last thing about the process is the `Image Calculator...`. This calculator allows you to do mathematical or logical operation between images. Below is a small macro that threshold an image, then using the image calculator, combine the original intensity with the mask so that only the object of interest gives signal.
+
+```Java
+run("Embryos");
+run("Duplicate...", " ");
+run("8-bit"); // RGB to 8 bit, required for the threshold
+setAutoThreshold("Default");
+setOption("BlackBackground", true);
+run("Convert to Mask");
+// Delete the scale
+makeRectangle(877, 1045, 556, 155);
+setBackgroundColor(0, 0, 0);
+run("Clear", "slice");
+run("Select None");
+//clean the binary
+run("Fill Holes");
+run("Close-");
+// image calculation
+imageCalculator("AND create", "embryos.jpg","embryos-1.jpg");
+```
+
+![ImageCalculation_ex.png](Images/Readme_images/ImageCalculation_ex.png)
+
+> [!NOTE]
+> Some calculation may require to manipulate the mask value (which is by default 255). This can be done in the `Process` -> `Math`.
+
+## Exercices
 
 
 
