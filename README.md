@@ -244,6 +244,8 @@ However, with the auto-completion active, just typing `for` should prompt the fo
 
 ![for_loop_autocompletion.png](Images/Readme_images/for_loop_autocompletion.png)
 
+Other kind of loop are also, such as the `while(condition){}`, where the condition is first evaluated and if `true`, it enters the loop until the condition is `false`, and the `do {...} while(condition);` that will excecute the loop first, then check the condition to determine to continue or not the loop.
+
 ### The `if` condition
 Check if the condition is `true`, and `if` it is the case, realize the action. For example, if I am tired, I stop to stir the pot.
 
@@ -255,15 +257,34 @@ A boolean is returned in some case by some ImageJ function (for example: `is("gr
 - `!=` to check inequality
 - `>`, `<`, `>=`, `<=` for comparison (bigger, smaller than)
 
-Finally, it is also possible to define a piece of code to activate if the condition does not apply with the `else` keyword.
+It is possible to define a piece of code to activate if the condition does not apply with the `else` keyword. In a same manner, it is possible to chain condition checking with the `else if` keyword. Keep in mind that in this case, the program will check each `if` condition in order, and will only excecute the code of the first `true` statement. Finally, it is possible to check multiple condition at the same time with using boolean check, with `&&` for `and` (condition1 AND condition2, where both condition needs to be `true`) and `||` for `or` (condition1 or condition2, where only one of the condition needs to be `true`).
 
 ```Java
 a = 5;
 b = 3.0;
-if (5==5) {
-	//code here
+to_print = true;
+
+if (a == b){
+	print("a is bigger than b");
 }
+else if (a <= b){
+	print("a is smaller than b");
+}
+else {
+	print("a is equal to b");
+}
+
+if (to_print || a > b){
+	print("a is smaller than b");
+	}
 ```
+
+> [!NOTE]
+> Try to correct the above example so it prints the correct statement!
+
+
+
+
 
 
 
