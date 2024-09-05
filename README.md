@@ -364,10 +364,28 @@ imageCalculator("AND create", "embryos.jpg","embryos-1.jpg");
 > Some calculation may require to manipulate the mask value (which is by default 255). This can be done in the `Process` -> `Math`.
 
 ## Exercices
+### Counting dots accross time
+You can download the image by cliking the ![link 🔗](Images/Yeast%20meiosis/C2-1B_MAX_010618_Hsp104Htb1_Meiosis_01_47_zproj_R3D_D3D-1.tif)
 
+If you download the full repositery, the image to try on is `C2-1B_MAX_010618_Hsp104Htb1_Meiosis_01_47_zproj_R3D_D3D-1.tif`, located in the `Yeast meiosis` folder.
 
+Below is a montage of the image, that consist in the maxiumum projection of yeast population undergoing a meiosis. One easy way to analyse these data is to count the number of dots progression accross time. We can also see while looking at the data that the dot size seems to decrease, so let's measure the average size as well.
 
+![Yeast2_C2_Montage.png](Images/Readme_images/Yeast2_C2_Montage.png)
 
+One method is:
+
+- Start the recording
+- Segmenting the nuclei with a `Threshold`. Check the different option effect on the resulting mask (`Stack histogram` or `Calculate threshold` for each image)
+- Does the mask need some cleaning or processing?
+- Set the measurement then analyze the particles. There is an option to summarize the result!
+- Save the resulting table as CSV
+- Curate the macro
+- Import the data in Excel (be sure to replace the `.` by `,`) and make one or a couple of quick graphes showing the result
+
+![Exercice 1 Result.png](Images/Readme_images/Exercice_1_Result.png)
+
+Then try the macro that you just record and curate on the other image (in the same folder) [link 🔗](Images/Yeast%20meiosis/C1-2E_MAX_09122017_Nsr1Hsp104Meiosis_04_R3D_D3Dzproj-1.tif). Just try to understand why it mays not work on this dataset.
 
 
 
