@@ -388,7 +388,7 @@ One method is:
 Then try the macro that you just record and curate on the other image (in the same folder) [link 🔗](Images/Yeast%20meiosis/C1-2E_MAX_09122017_Nsr1Hsp104Meiosis_04_R3D_D3Dzproj-1.tif). Just try to understand why it mays not work on this dataset.
 
 ### Myelin segmentation
-You can found the Electron microscope images (FIB-SEM) of the optic nerves of a mouse in the following folder.
+You can found the Electron microscope images (FIB-SEM) of the optic nerves of a mouse in the following [folder 🔗](Images/Optic_nerve_FIB-SEM).
 In this case, we are trying to segment the myelin, this thick protective layer around neurons, that appear pitch black on the data.
 
 Since the myelin is so black and uniform, it is easy to found a segmentation protocol (such as Triangle, or even a manual one). In this specific case, it will perform quite well, even if smaller myelin sheet may not be correctly segmented, and that some noises can be found.
@@ -402,7 +402,7 @@ However, if you want to segment parts that are not extreme white or black in the
 It is possible to manually adjust which parameters the model can use for the training in setting. Have a look at the [documentation](https://imagej.net/plugins/tws/) if you are interested.
 
 ### 3D embryo timelapse
-You can found the images (66!) of embryo in the following folder. These images are 3D, take some time to explore the data! Native Fiji is not very well adapted for 3D analysis. Most of the analysis will be done by slice of a stack, leading to... interesting trouble. You can have a quick try by segmenting the image (an Otsu thresholding do a perfect job), then a little bit of cleaning (like an opening, followed by a watershed) and finish with an analyze particle (just the size). You may have realized that the cell are quite oddly segmented, and that there is no continuation in 3D.
+You can found the images (66!) of embryo in the following [folder 🔗](Images/Time_course_embryo). These images are 3D, take some time to explore the data! Native Fiji is not very well adapted for 3D analysis. Most of the analysis will be done by slice of a stack, leading to... interesting trouble. You can have a quick try by segmenting the image (an Otsu thresholding do a perfect job), then a little bit of cleaning (like an opening, followed by a watershed) and finish with an analyze particle (just the size). You may have realized that the cell are quite oddly segmented, and that there is no continuation in 3D.
 
 Luckily for us, some plugins are working in 3D. We then come back to MorphoLib, which can do an opening in 3D, allowing to separate a little better the different cells. For the sake of simplicity, let's extract an image at the center of the embryo (slice 70?), apply a watershed, set the measurement for the area and shape descriptor, then on the measure particle be sure to activate the summarize. This summarize have the nice effect that it will **NOT** be erased/emptied when you do a new measurment, meaning that you can process the full folder of image with one macro and save the average result of the given slice in one table - a lot simplier to analyze by Excel!
 
