@@ -404,7 +404,14 @@ It is possible to manually adjust which parameters the model can use for the tra
 ### 3D embryo timelapse
 You can found the images (66!) of embryo in the following [folder 🔗](Images/Time_course_embryo). These images are 3D, take some time to explore the data! Native Fiji is not very well adapted for 3D analysis. Most of the analysis will be done by slice of a stack, leading to... interesting trouble. You can have a quick try by segmenting the image (an Otsu thresholding do a perfect job), then a little bit of cleaning (like an opening, followed by a watershed) and finish with an analyze particle (just the size). You may have realized that the cell are quite oddly segmented, and that there is no continuation in 3D.
 
+![Embryo-t=60.gif](Images/Readme_images/Embryo-t=60.gif)
+
 Luckily for us, some plugins are working in 3D. We then come back to MorphoLib, which can do an opening in 3D, allowing to separate a little better the different cells. For the sake of simplicity, let's extract an image at the center of the embryo (slice 70?), apply a watershed, set the measurement for the area and shape descriptor, then on the measure particle be sure to activate the summarize. This summarize have the nice effect that it will **NOT** be erased/emptied when you do a new measurment, meaning that you can process the full folder of image with one macro and save the average result of the given slice in one table - a lot simplier to analyze by Excel!
 
+![embryo-measure.png](Images/Readme_images/embryo-measure.png)
 
+### Rounding assay
+Let's go back to the beginning, and let's analyze the roundess of yeast budding ([link 🔗](Images/rounding_analysis)).
+
+To make things a little more interesting, try to categorize the different level of roundess and count the number of cell in each categories!
 
