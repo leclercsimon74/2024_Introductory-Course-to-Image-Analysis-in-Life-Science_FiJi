@@ -363,6 +363,9 @@ imageCalculator("AND create", "embryos.jpg","embryos-1.jpg");
 > [!NOTE]
 > Some calculation may require to manipulate the mask value (which is by default 255). This can be done in the `Process` -> `Math`.
 
+### Graphic User Interface (GUI)
+ImageJ has a powerful tool to set up a user interface. You can found it in the following [link 🔗]()
+
 ## Exercices
 ### Counting dots accross time
 You can download the image by cliking the [link 🔗](Images/Yeast%20meiosis/C2-1B_MAX_010618_Hsp104Htb1_Meiosis_01_47_zproj_R3D_D3D-1.tif)
