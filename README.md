@@ -363,6 +363,9 @@ imageCalculator("AND create", "embryos.jpg","embryos-1.jpg");
 > [!NOTE]
 > Some calculation may require to manipulate the mask value (which is by default 255). This can be done in the `Process` -> `Math`.
 
+> [!TIP]
+> Basic ImageJ, in the binary section, have very convenient function. 'fill holes', 'skeleton', 'contour' are all generating operation on the mask, that can be further manipulated. Do not hesitate to try them!
+
 ### Graphic User Interface (GUI)
 ImageJ has a powerful tool to set up a user interface. You can found it in the following [link 🔗](https://imagej.net/ij/developer/macro/functions.html#D) called Dialog. This can be very useful to make a window with options for further processing or on-the-fly adjustment. The `Dialog.createNonBlocking("Title")` will create a window that allow you to interact with opened image before continuing. It can only be done in a script, and have the following structure:
 
@@ -381,9 +384,11 @@ condition = Dialog.getCheckbox();
 print(condition);
 ```
 
-It is possible to grab paths, images, choices... And so make a complete interface. It is also possible to combine with 'if' condition to make an adaptable interface.
+It is possible to grab paths, images, choices... And so make a complete interface. It is also possible to combine with 1if' condition to make an adaptable interface.
 
 ## Exercices
+We will solve the first exercise together, step by step. Other exercises, with the material, are here to try more scripting options on Fiji and with more type of data.
+
 ### Counting dots accross time
 You can download the image by cliking the [link 🔗](Images/Yeast%20meiosis/C2-1B_MAX_010618_Hsp104Htb1_Meiosis_01_47_zproj_R3D_D3D-1.tif)
 
