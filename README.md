@@ -364,7 +364,24 @@ imageCalculator("AND create", "embryos.jpg","embryos-1.jpg");
 > Some calculation may require to manipulate the mask value (which is by default 255). This can be done in the `Process` -> `Math`.
 
 ### Graphic User Interface (GUI)
-ImageJ has a powerful tool to set up a user interface. You can found it in the following [link 🔗]()
+ImageJ has a powerful tool to set up a user interface. You can found it in the following [link 🔗](https://imagej.net/ij/developer/macro/functions.html#D) called Dialog. This can be very useful to make a window with options for further processing or on-the-fly adjustment. The `Dialog.createNonBlocking("Title")` will create a window that allow you to interact with opened image before continuing. It can only be done in a script, and have the following structure:
+
+- create a window
+- add element(s)
+- show the GUI
+- grab the value(s) of the setup element(s)
+
+Here is a small example
+
+```Java
+Dialog.createNonBlocking("Testing GUI");
+Dialog.addCheckbox("Keep working", true);
+Dialog.show();
+condition = Dialog.getCheckbox();
+print(condition);
+```
+
+It is possible to grab paths, images, choices... And so make a complete interface. It is also possible to combine with 'if' condition to make an adaptable interface.
 
 ## Exercices
 ### Counting dots accross time
